@@ -53,7 +53,6 @@ class SongListScreen extends StatelessWidget {
                       horizontal: 16.0,
                     ), // Horizontale Padding hinzugefügt
                     child: Card(
-                      // Verwende Card für eine visuell अलग Listenelement
                       color: const Color(0xFFBCBABE),
                       child: ListTile(
                         title: Text(song),

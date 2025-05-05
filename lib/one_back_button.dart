@@ -5,11 +5,16 @@ class OneBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-      backgroundColor: Color(0xFF398A9C),
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16.0, 8.0, 16.0, 0),
+      child: FloatingActionButton(
+        backgroundColor: Color(0xFF398A9C),
 
-      onPressed: null,
-      child: Icon(Icons.reply_outlined, size: 48, color: Colors.white),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        child: Icon(Icons.reply_outlined, size: 48, color: Colors.white),
+      ),
     );
   }
 }

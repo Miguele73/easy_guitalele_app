@@ -1,6 +1,8 @@
 import 'package:easy_guitalele_app/chords_screen.dart';
 import 'package:easy_guitalele_app/notes_screen.dart';
+import 'package:easy_guitalele_app/one_back_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class SongDetailSelectionScreen extends StatelessWidget {
   final String songName;
@@ -14,45 +16,103 @@ class SongDetailSelectionScreen extends StatelessWidget {
         title: Text(songName),
         backgroundColor: const Color(0xFF505160),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      floatingActionButton: Row(
+        children: [
+          const OneBackButton(),
+          const SizedBox(width: 96),
+          FloatingActionButton(
+            backgroundColor: const Color(0xFF398A9C),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: SvgPicture.asset('assets/svg/HOME Button.svg'),
+          ),
+        ],
+      ),
+
       backgroundColor: const Color(0xFF505160),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: () {
-                // Navigiere zum Bildschirm, der die Noten für dieses Lied anzeigt
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => NotesScreen(songName: songName),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.fromLTRB(32.0, 32.0, 32.0, 48.0),
+            child: Image.asset('assets/logo/logo.png', height: 200, width: 200),
+          ),
+          const SizedBox(height: 20),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: SizedBox(
+                    child: Card(
+                      color: const Color(0xFFBCBABE),
+                      child: ListTile(
+                        title: Text(songName),
+                        leading: const Icon(Icons.music_note),
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder:
+                                  (context) => SongDetailSelectionScreen(
+                                    songName: songName,
+                                  ),
+                            ),
+                          );
+                        },
+                      ),
+                    ),
                   ),
-                );
-              },
-              child: const Text('Noten anzeigen'),
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Navigiere zum Bildschirm, der die Akkorde für dieses Lied anzeigt
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ChordsScreen(songName: songName),
+                ),
+                const SizedBox(height: 32),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFBCBABE),
+                    foregroundColor: Colors.black,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32,
+                      vertical: 16,
+                    ),
+                    textStyle: const TextStyle(fontSize: 20),
                   ),
-                );
-              },
-              child: const Text('Akkorde anzeigen'),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => NotesScreen(songName: songName),
+                      ),
+                    );
+                  },
+                  child: const Text('Noten anzeigen'),
+                ),
+                const SizedBox(height: 20),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFFD5C9B1),
+                    foregroundColor: Colors.black,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 32,
+                      vertical: 16,
+                    ),
+                    textStyle: const TextStyle(fontSize: 20),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ChordsScreen(songName: songName),
+                      ),
+                    );
+                  },
+                  child: const Text('Akkorde anzeigen'),
+                ),
+                const SizedBox(height: 20),
+              ],
             ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context); // Gehe zurück zur Songliste
-              },
-              child: const Text('Zurück'),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
