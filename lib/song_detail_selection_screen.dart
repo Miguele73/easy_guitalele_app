@@ -1,8 +1,8 @@
 import 'package:easy_guitalele_app/chords_screen.dart';
+import 'package:easy_guitalele_app/home_button.dart';
 import 'package:easy_guitalele_app/notes_screen.dart';
 import 'package:easy_guitalele_app/one_back_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class SongDetailSelectionScreen extends StatelessWidget {
   final String songName;
@@ -21,13 +21,7 @@ class SongDetailSelectionScreen extends StatelessWidget {
         children: [
           const OneBackButton(),
           const SizedBox(width: 96),
-          FloatingActionButton(
-            backgroundColor: const Color(0xFF398A9C),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: SvgPicture.asset('assets/svg/HOME Button.svg'),
-          ),
+          const HomeButton(),
         ],
       ),
 

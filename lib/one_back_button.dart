@@ -13,7 +13,7 @@ class OneBackButton extends StatelessWidget {
         onPressed: () {
           Navigator.pop(context);
         },
-        child: Icon(Icons.reply_outlined, size: 48, color: Colors.white),
+        child: Image.asset('assets/icons/BACK Button.png'),
       ),
     );
   }
