@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DesicionsBox extends StatelessWidget {
+class DesicionsBox extends StatefulWidget {
   final Color color;
   final String selectionText;
   final ImageIcon imageIcon;
@@ -12,16 +12,21 @@ class DesicionsBox extends StatelessWidget {
   });
 
   @override
+  State<DesicionsBox> createState() => _DesicionsBoxState();
+}
+
+class _DesicionsBoxState extends State<DesicionsBox> {
+  @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (selectionText == 'Songs') {
+        if (widget.selectionText == 'Songs') {
           Navigator.pushNamed(context, '/songListScreen');
-        } else if (selectionText == 'Chords') {
+        } else if (widget.selectionText == 'Chords') {
           Navigator.pushNamed(context, '/chordSelectionScreen');
-        } else if (selectionText == 'Scales') {
+        } else if (widget.selectionText == 'Scales') {
           Navigator.pushNamed(context, '/scaleSelectionScreen');
-        } else if (selectionText == 'Chordliste') {
+        } else if (widget.selectionText == 'Chordliste') {
           Navigator.pushNamed(context, '/chordListScreen');
         }
       },
@@ -31,7 +36,7 @@ class DesicionsBox extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: color,
+              color: widget.color,
               spreadRadius: 2,
               blurRadius: 2,
               offset: const Offset(0, 3),
@@ -44,9 +49,23 @@ class DesicionsBox extends StatelessWidget {
         width: 300,
         child: Row(
           children: [
-            IconButton(onPressed: () {}, icon: imageIcon),
+            IconButton(
+              onPressed: () {
+                if (widget.selectionText == 'Songs') {
+                  Navigator.pushNamed(context, '/songListScreen');
+                } else if (widget.selectionText == 'Chords') {
+                  Navigator.pushNamed(context, '/chordSelectionScreen');
+                } else if (widget.selectionText == 'Scales') {
+                  Navigator.pushNamed(context, '/scaleSelectionScreen');
+                } else if (widget.selectionText == 'Chordliste') {
+                  Navigator.pushNamed(context, '/chordListScreen');
+                }
+              },
+              icon: widget.imageIcon,
+            ),
+            const SizedBox(width: 8),
             Text(
-              selectionText,
+              widget.selectionText,
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),

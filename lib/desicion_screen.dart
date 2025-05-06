@@ -2,9 +2,14 @@ import 'package:easy_guitalele_app/desicions_box.dart';
 import 'package:easy_guitalele_app/one_back_button.dart';
 import 'package:flutter/material.dart';
 
-class DesicionScreen extends StatelessWidget {
+class DesicionScreen extends StatefulWidget {
   const DesicionScreen({super.key});
 
+  @override
+  State<DesicionScreen> createState() => _DesicionScreenState();
+}
+
+class _DesicionScreenState extends State<DesicionScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -3,9 +3,14 @@ import 'package:easy_guitalele_app/one_back_button.dart';
 import 'package:easy_guitalele_app/song_detail_selection_screen.dart';
 import 'package:flutter/material.dart';
 
-class SongListScreen extends StatelessWidget {
+class SongListScreen extends StatefulWidget {
   const SongListScreen({super.key});
 
+  @override
+  State<SongListScreen> createState() => _SongListScreenState();
+}
+
+class _SongListScreenState extends State<SongListScreen> {
   get songs => [
     'Song 1',
     'Song 2',
