@@ -35,9 +35,6 @@ class SongListScreen extends StatelessWidget {
         child: Column(
           children: [
             DesicionsBox(
-              onTap: () {
-                Navigator.pushNamed(context, '/songListScreen');
-              },
               color: Color(0xFFDE7A22),
               selectionText: 'Songs',
               imageIcon: ImageIcon(

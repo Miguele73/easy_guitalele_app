@@ -9,13 +9,22 @@ class DesicionsBox extends StatelessWidget {
     required this.color,
     required this.selectionText,
     required this.imageIcon,
-    required Null Function() onTap,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        if (selectionText == 'Songs') {
+          Navigator.pushNamed(context, '/songListScreen');
+        } else if (selectionText == 'Chords') {
+          Navigator.pushNamed(context, '/chordSelectionScreen');
+        } else if (selectionText == 'Scales') {
+          Navigator.pushNamed(context, '/scaleSelectionScreen');
+        } else if (selectionText == 'Chordliste') {
+          Navigator.pushNamed(context, '/chordListScreen');
+        }
+      },
 
       child: Container(
         decoration: BoxDecoration(

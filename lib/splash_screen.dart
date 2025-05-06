@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen>
 
     _colorController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 4),
+      duration: Duration(seconds: 6),
     )..repeat(reverse: true);
 
     _colorAnimation = ColorTween(
