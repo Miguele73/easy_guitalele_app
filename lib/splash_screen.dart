@@ -21,18 +21,15 @@ class _SplashScreenState extends State<SplashScreen>
   void initState() {
     super.initState();
 
-    // Slide-Animation für das Logo
     _slideController =
         AnimationController(vsync: this, duration: Duration(seconds: 6))
           ..forward().whenComplete(() {
-            // Nach der Slide-Animation kurz warten und dann zur Mitte zurückkehren
             Future.delayed(Duration(milliseconds: 500), () {
               _slideController.reverse();
             });
           })
           ..addStatusListener((status) {
             if (status == AnimationStatus.dismissed) {
-              // Nach dem Zurückkehren zur Mitte zur nächsten Seite navigieren
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) => DesicionScreen()),
@@ -41,16 +38,15 @@ class _SplashScreenState extends State<SplashScreen>
           });
 
     _slideAnimation = Tween<Offset>(
-      begin: Offset(0.0, -1.0), // Startposition oberhalb des Bildschirms
-      end: Offset.zero, // Endposition in der Mitte (wird dann zurück animiert)
+      begin: Offset(-1.0, -1.0),
+      end: Offset.fromDirection(0.7),
     ).animate(
       CurvedAnimation(parent: _slideController, curve: Curves.easeInOut),
     );
 
-    // Farbverlaufsanimation für den Hintergrund
     _colorController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 6), // Längere Dauer für den Farbverlauf
+      duration: Duration(seconds: 4),
     )..repeat(reverse: true);
 
     _colorAnimation = ColorTween(
@@ -93,8 +89,8 @@ class _SplashScreenState extends State<SplashScreen>
                 end: Alignment.bottomCenter,
                 colors: [
                   _colorAnimation.value ?? Color(0xFF68829E),
-                  // ignore: deprecated_member_use
-                  _colorAnimation.value?.withOpacity(0.8) ?? Color(0xFFAEBD38),
+
+                  _colorAnimation.value ?? Color(0xFFAEBD38),
                   Color(0xFFBFDCCF),
                 ],
               ),
@@ -103,10 +99,8 @@ class _SplashScreenState extends State<SplashScreen>
               child: SlideTransition(
                 position: _slideAnimation,
                 child: Padding(
-                  padding: const EdgeInsets.all(
-                    50.0,
-                  ), // Optional: etwas Platz um das Logo
-                  child: Image.asset('assets/logo.png'), // Dein PNG-Logo
+                  padding: const EdgeInsets.all(50.0),
+                  child: Image.asset('assets/logo/logo.png'),
                 ),
               ),
             ),

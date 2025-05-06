@@ -9,6 +9,7 @@ class DesicionsBox extends StatelessWidget {
     required this.color,
     required this.selectionText,
     required this.imageIcon,
+    required Null Function() onTap,
   });
 
   @override

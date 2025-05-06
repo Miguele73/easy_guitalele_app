@@ -12,14 +12,7 @@ class DesicionScreen extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 250,
         backgroundColor: const Color(0xFF505160),
-        title: Image.asset('assets/images/logo.png', height: 200, width: 200),
-
-        // flexibleSpace: Padding(
-        // padding: const EdgeInsets.all(32),
-        // child: SizedBox(
-        // height: 200,
-        // width: 200,
-        // child:
+        title: Image.asset('assets/logo/logo.png', height: 200, width: 200),
       ),
 
       floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
@@ -31,6 +24,9 @@ class DesicionScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             DesicionsBox(
+              onTap: () {
+                Navigator.pushNamed(context, '/songListScreen');
+              },
               color: Color(0xFFDE7A22),
               selectionText: 'Songs',
               imageIcon: ImageIcon(
@@ -38,11 +34,17 @@ class DesicionScreen extends StatelessWidget {
               ),
             ),
             DesicionsBox(
+              onTap: () {
+                Navigator.pushNamed(context, '/chordSelectionScreen');
+              },
               color: Color(0xFFD5C9B1),
               selectionText: 'Chords',
               imageIcon: ImageIcon(AssetImage('assets/icons/ChordIcon.png')),
             ),
             DesicionsBox(
+              onTap: () {
+                Navigator.pushNamed(context, '/scaleSelectionScreen');
+              },
               color: Color(0xFFBCBABE),
               selectionText: 'Scales',
               imageIcon: ImageIcon(
@@ -51,11 +53,17 @@ class DesicionScreen extends StatelessWidget {
               ),
             ),
             DesicionsBox(
+              onTap: () {
+                Navigator.pushNamed(context, '/chordListScreen');
+              },
               color: Color(0xFFBFDCCF),
               selectionText: 'Chordliste',
               imageIcon: ImageIcon(AssetImage('assets/icons/ChordIcon.png')),
             ),
             DesicionsBox(
+              onTap: () {
+                Navigator.pushNamed(context, '/favoritesScreen');
+              },
               color: Color(0xFFE05858),
               selectionText: 'Meine Favoriten',
               imageIcon: ImageIcon(

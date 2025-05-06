@@ -35,6 +35,9 @@ class SongListScreen extends StatelessWidget {
         child: Column(
           children: [
             DesicionsBox(
+              onTap: () {
+                Navigator.pushNamed(context, '/songListScreen');
+              },
               color: Color(0xFFDE7A22),
               selectionText: 'Songs',
               imageIcon: ImageIcon(
@@ -49,9 +52,7 @@ class SongListScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   final String song = songs[index];
                   return Padding(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 16.0,
-                    ), // Horizontale Padding hinzugefügt
+                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Card(
                       color: const Color(0xFFBCBABE),
                       child: ListTile(
