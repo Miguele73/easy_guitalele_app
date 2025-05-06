@@ -23,7 +23,7 @@ flutter:
   assets:
     - assets/logo/
     - assets/icons/
-    - assets/svg/
+  
 
 
 flutter_launcher_icons:
@@ -37,7 +37,7 @@ flutter_launcher_icons:
   
 
 flutter_native_splash:
-  color: '#000000'
+  
   #background_image: 'assets/background.png'
   image: "assets/logo/logo.png"
   android: true
