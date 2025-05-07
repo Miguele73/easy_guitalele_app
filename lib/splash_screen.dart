@@ -1,6 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:easy_guitalele_app/desicion_screen.dart';
+import 'package:easy_guitalele_app/log_in_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen>
             if (status == AnimationStatus.dismissed) {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => DesicionScreen()),
+                MaterialPageRoute(builder: (context) => LogInScreen()),
               );
             }
           });

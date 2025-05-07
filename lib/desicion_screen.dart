@@ -1,5 +1,5 @@
 import 'package:easy_guitalele_app/desicions_box.dart';
-import 'package:easy_guitalele_app/one_back_button.dart';
+import 'package:easy_guitalele_app/my_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class DesicionScreen extends StatefulWidget {
@@ -20,13 +20,14 @@ class _DesicionScreenState extends State<DesicionScreen> {
         title: Image.asset('assets/logo/logo.png', height: 200, width: 200),
       ),
 
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: const OneBackButton(),
+      bottomNavigationBar: MyBottomNavigationBar(),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
+      // floatingActionButton: const OneBackButton(),
       body: Padding(
-        padding: EdgeInsets.fromLTRB(48, 0, 16, 128),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.center,
+        padding: EdgeInsets.fromLTRB(16, 0, 16, 0),
+        child: ListView(
+          shrinkWrap: true,
+
           children: [
             DesicionsBox(
               color: Color(0xFFDE7A22),
