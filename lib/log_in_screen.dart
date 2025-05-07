@@ -18,9 +18,35 @@ class _LogInScreenState extends State<LogInScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF505160),
       appBar: AppBar(
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(10),
+            bottomRight: Radius.circular(10),
+          ),
+        ),
+        centerTitle: true,
         toolbarHeight: 128,
         backgroundColor: AppColors.appBar,
-        title: Image.asset('assets/logo/logo.png', height: 100, width: 100),
+
+        title: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset('assets/logo/logo.png', height: 100, width: 100),
+            const SizedBox(height: 8),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(4.0, 2, 4, 16),
+              child: Text(
+                "Easy Guitalele",
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
       body: SafeArea(
         child: Padding(
@@ -33,7 +59,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white,
+                  color: AppColors.text,
                 ),
               ),
               TextFormField(
@@ -44,7 +70,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   labelStyle: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
-                    color: Colors.white,
+                    color: AppColors.text,
                   ),
                 ),
               ),
@@ -67,7 +93,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   labelStyle: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.normal,
-                    color: Colors.white,
+                    color: AppColors.text,
                   ),
                 ),
                 obscureText: _isObscured,
@@ -77,7 +103,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 child: TextButton(
                   onPressed: () {},
                   style: TextButton.styleFrom(
-                    foregroundColor: Colors.white,
+                    foregroundColor: AppColors.text,
                     textStyle: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
@@ -107,6 +133,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ),
               ),
+              Spacer(),
               Row(
                 spacing: 16,
                 children: [
@@ -115,22 +142,133 @@ class _LogInScreenState extends State<LogInScreen> {
                   Expanded(child: Divider()),
                 ],
               ),
-              Row(
-                spacing: 16,
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  SocialLoginButton(icon: Icons.g_mobiledata),
-                  SocialLoginButton(icon: Icons.apple),
-                  SocialLoginButton(icon: Icons.facebook),
-                ],
+
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DesicionScreen()),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(Icons.apple, color: Colors.white),
+                        const SizedBox(width: 8.0),
+                        const Text(
+                          "Login mit Apple",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Spacer(),
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DesicionScreen()),
+                    );
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(Icons.facebook, color: Colors.white),
+                        const SizedBox(width: 8.0),
+                        const Text(
+                          "Login mit Facebook",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Spacer(),
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DesicionScreen()),
+                    );
+                  },
+
+                  child: Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        const Icon(
+                          Icons.g_mobiledata_rounded,
+                          color: Colors.black,
+                        ),
+                        const SizedBox(width: 8.0),
+                        const Text(
+                          "Login mit Google",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
               ),
               Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 spacing: 8,
                 children: [
-                  Text("Du hast noch keinen Account?"),
-                  TextButton(onPressed: () {}, child: Text("Registrieren")),
+                  Text(
+                    "Du hast noch keinen Account?",
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                      color: AppColors.scales,
+                    ),
+                  ),
+                  TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "Registrieren",
+                      style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.normal,
+                        color: AppColors.text,
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ],

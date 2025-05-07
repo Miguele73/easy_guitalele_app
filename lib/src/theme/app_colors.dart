@@ -8,4 +8,5 @@ abstract class AppColors {
   static final Color chordList = Color(0xFFBFDCCF);
   static final Color favorites = Color(0xFFE05858);
   static final Color appBar = Color(0xFFA1D6E2);
+  static final Color text = Color(0xFFF4CC70);
 }
