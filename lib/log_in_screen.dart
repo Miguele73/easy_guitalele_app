@@ -1,4 +1,5 @@
 import 'package:easy_guitalele_app/social_login_button.dart';
+import 'package:easy_guitalele_app/src/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class LogInScreen extends StatefulWidget {
@@ -14,9 +15,11 @@ class _LogInScreenState extends State<LogInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF505160),
       appBar: AppBar(
-        backgroundColor: const Color(0xFF5F968E),
-        title: Image.asset('assets/logo/logo.png', height: 200, width: 200),
+        toolbarHeight: 128,
+        backgroundColor: AppColors.appBar,
+        title: Image.asset('assets/logo/logo.png', height: 100, width: 100),
       ),
       body: SafeArea(
         child: Padding(
@@ -25,19 +28,29 @@ class _LogInScreenState extends State<LogInScreen> {
             spacing: 8,
             children: [
               Text(
-                "Welcome back! Schön, dich wieder zu sehen",
-                style: Theme.of(context).textTheme.titleLarge,
+                "Hi, schön, dass du da bist!",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
               TextFormField(
                 decoration: InputDecoration(
                   labelText: "Email",
                   hintText: "Email eingeben",
                   border: OutlineInputBorder(),
+                  labelStyle: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white,
+                  ),
                 ),
               ),
               TextFormField(
                 decoration: InputDecoration(
                   suffixIcon: IconButton(
+                    color: Colors.white,
                     onPressed: () {
                       setState(() {
                         _isObscured = !_isObscured;
@@ -50,6 +63,11 @@ class _LogInScreenState extends State<LogInScreen> {
                   labelText: "Passwort",
                   hintText: "Passwort eingeben",
                   border: OutlineInputBorder(),
+                  labelStyle: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.white,
+                  ),
                 ),
                 obscureText: _isObscured,
               ),
@@ -57,12 +75,25 @@ class _LogInScreenState extends State<LogInScreen> {
                 alignment: Alignment.centerRight,
                 child: TextButton(
                   onPressed: () {},
+                  style: TextButton.styleFrom(
+                    foregroundColor: Colors.white,
+                    textStyle: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
                   child: Text("Passwort vergessen?"),
                 ),
               ),
               SizedBox(
                 width: double.infinity,
                 child: FilledButton(
+                  style: FilledButton.styleFrom(
+                    backgroundColor: AppColors.button,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
                   onPressed: () {},
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
