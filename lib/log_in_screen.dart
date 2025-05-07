@@ -1,6 +1,7 @@
 import 'package:easy_guitalele_app/social_login_button.dart';
 import 'package:easy_guitalele_app/src/theme/app_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:easy_guitalele_app/desicion_screen.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -94,7 +95,12 @@ class _LogInScreenState extends State<LogInScreen> {
                       borderRadius: BorderRadius.circular(8),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => DesicionScreen()),
+                    );
+                  },
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Text("Login"),
