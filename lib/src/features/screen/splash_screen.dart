@@ -1,6 +1,6 @@
 // ignore_for_file: library_private_types_in_public_api
 
-import 'package:easy_guitalele_app/log_in_screen.dart';
+import 'package:easy_guitalele_app/src/features/auth/presentation/log_in_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

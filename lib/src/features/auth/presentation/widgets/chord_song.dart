@@ -1,4 +1,4 @@
-import 'song.dart';
+import '../../song/song.dart';
 
 class ChordSong extends Song {
   final List<Section> sections;
@@ -16,16 +16,14 @@ class ChordSong extends Song {
 
 enum SectionType { verse, chorus, bridge, intro, outro, custom }
 
-// Represents a section of the song (verse, chorus, etc.)
 class Section {
   final SectionType type;
-  final String? name; // Optional: e.g. "Verse 1", "Chorus"
+  final String? name;
   final List<Line> lines;
 
   Section({required this.type, this.name, required this.lines});
 }
 
-// Represents a text line with associated chords
 class Line {
   final List<ChordPosition> chords;
   final String text;
@@ -33,10 +31,9 @@ class Line {
   Line({required this.chords, required this.text});
 }
 
-// Represents a chord with its position in the text
 class ChordPosition {
-  final String chordName; // e.g. "Am", "E7", "G"
-  final int position; // Word position relative to the beginning of the line
+  final String chordName;
+  final int position;
 
   ChordPosition({required this.chordName, required this.position});
 }

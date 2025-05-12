@@ -1,4 +1,4 @@
-import 'artists.dart';
+import '../artist/artists.dart';
 
 enum SongDifficulty { veryEasy, easy, medium, hard, master }
 

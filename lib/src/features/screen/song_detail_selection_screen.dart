@@ -1,7 +1,7 @@
-import 'package:easy_guitalele_app/chords_screen.dart';
-import 'package:easy_guitalele_app/home_button.dart';
-import 'package:easy_guitalele_app/notes_screen.dart';
-import 'package:easy_guitalele_app/one_back_button.dart';
+import 'package:easy_guitalele_app/src/features/screen/chords_screen.dart';
+import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/home_button.dart';
+import 'package:easy_guitalele_app/src/features/screen/notes_screen.dart';
+import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/one_back_button.dart';
 import 'package:flutter/material.dart';
 
 class SongDetailSelectionScreen extends StatelessWidget {

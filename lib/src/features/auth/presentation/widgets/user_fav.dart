@@ -1,4 +1,4 @@
-import 'package:easy_guitalele_app/song.dart';
+import 'package:easy_guitalele_app/src/features/auth/song/song.dart';
 
 class UsersFav {
   final Song song;

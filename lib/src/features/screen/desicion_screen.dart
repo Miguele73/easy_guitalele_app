@@ -1,5 +1,5 @@
-import 'package:easy_guitalele_app/desicions_box.dart';
-import 'package:easy_guitalele_app/my_bottom_navigation_bar.dart';
+import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/desicions_box.dart';
+import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/my_bottom_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 class DesicionScreen extends StatefulWidget {

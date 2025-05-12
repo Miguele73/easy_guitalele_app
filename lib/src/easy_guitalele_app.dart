@@ -1,8 +1,8 @@
-import 'package:easy_guitalele_app/chord_list_screen.dart';
-import 'package:easy_guitalele_app/chord_selection_screen.dart';
-import 'package:easy_guitalele_app/scale_selection_screen.dart';
-import 'package:easy_guitalele_app/song_list_screen.dart';
-import 'package:easy_guitalele_app/splash_screen.dart';
+import 'package:easy_guitalele_app/src/features/screen/chord_list_screen.dart';
+import 'package:easy_guitalele_app/src/features/screen/chord_selection_screen.dart';
+import 'package:easy_guitalele_app/src/features/screen/scale_selection_screen.dart';
+import 'package:easy_guitalele_app/src/features/screen/song_list_screen.dart';
+import 'package:easy_guitalele_app/src/features/screen/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class EasyGuitaleleApp extends StatelessWidget {

@@ -1,7 +1,7 @@
-import 'package:easy_guitalele_app/chord_song.dart';
-import 'package:easy_guitalele_app/song.dart';
-import 'package:easy_guitalele_app/tab_song.dart';
-import 'package:easy_guitalele_app/user_fav.dart';
+import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/chord_song.dart';
+import 'package:easy_guitalele_app/src/features/auth/song/song.dart';
+import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/tab_song.dart';
+import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/user_fav.dart';
 
 import 'database_repository.dart';
 

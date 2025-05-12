@@ -1,4 +1,4 @@
-import 'song.dart';
+import '../../song/song.dart';
 
 class TabsSong extends Song {
   final String tabImgUrl; // URL to the tab image file

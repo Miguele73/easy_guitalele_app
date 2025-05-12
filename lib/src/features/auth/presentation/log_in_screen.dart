@@ -1,7 +1,6 @@
-import 'package:easy_guitalele_app/social_login_button.dart';
 import 'package:easy_guitalele_app/src/theme/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:easy_guitalele_app/desicion_screen.dart';
+import 'package:easy_guitalele_app/src/features/screen/desicion_screen.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
