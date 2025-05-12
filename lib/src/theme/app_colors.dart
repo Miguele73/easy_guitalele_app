@@ -9,4 +9,7 @@ abstract class AppColors {
   static final Color favorites = Color(0xFFE05858);
   static final Color appBar = Color(0xFFA1D6E2);
   static final Color text = Color(0xFFF4CC70);
+  static final Color background = Color(0xFF505160);
+  static final Color white = Color(0xFFFFFFFF);
+  static final Color black = Color(0xFF000000);
 }

@@ -24,14 +24,14 @@ class _LogInScreenState extends State<LogInScreen> {
           ),
         ),
         centerTitle: true,
-        toolbarHeight: 128,
+        toolbarHeight: 96,
         backgroundColor: AppColors.appBar,
 
         title: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset('assets/logo/logo.png', height: 100, width: 100),
+            Image.asset('assets/logo/logo_klein.png', width: 50, height: 50),
             const SizedBox(height: 8),
             Padding(
               padding: const EdgeInsets.fromLTRB(4.0, 2, 4, 16),
@@ -47,6 +47,7 @@ class _LogInScreenState extends State<LogInScreen> {
           ],
         ),
       ),
+
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(16),
@@ -61,41 +62,48 @@ class _LogInScreenState extends State<LogInScreen> {
                   color: AppColors.text,
                 ),
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  labelText: "Email",
-                  hintText: "Email eingeben",
-                  border: OutlineInputBorder(),
-                  labelStyle: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal,
-                    color: AppColors.text,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: "Email",
+                    hintText: "Email eingeben",
+                    border: OutlineInputBorder(),
+                    labelStyle: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                      color: AppColors.text,
+                    ),
                   ),
                 ),
               ),
-              TextFormField(
-                decoration: InputDecoration(
-                  suffixIcon: IconButton(
-                    color: Colors.white,
-                    onPressed: () {
-                      setState(() {
-                        _isObscured = !_isObscured;
-                      });
-                    },
-                    icon: Icon(
-                      _isObscured ? Icons.visibility : Icons.visibility_off,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    suffixIcon: IconButton(
+                      color: Colors.white,
+                      onPressed: () {
+                        setState(() {
+                          _isObscured = !_isObscured;
+                        });
+                      },
+                      icon: Icon(
+                        size: 24,
+                        _isObscured ? Icons.visibility : Icons.visibility_off,
+                      ),
+                    ),
+                    labelText: "Passwort",
+                    hintText: "Passwort eingeben",
+                    border: OutlineInputBorder(),
+                    labelStyle: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                      color: AppColors.text,
                     ),
                   ),
-                  labelText: "Passwort",
-                  hintText: "Passwort eingeben",
-                  border: OutlineInputBorder(),
-                  labelStyle: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal,
-                    color: AppColors.text,
-                  ),
+                  obscureText: _isObscured,
                 ),
-                obscureText: _isObscured,
               ),
               Align(
                 alignment: Alignment.centerRight,
@@ -111,28 +119,33 @@ class _LogInScreenState extends State<LogInScreen> {
                   child: Text("Passwort vergessen?"),
                 ),
               ),
-              SizedBox(
-                width: double.infinity,
-                child: FilledButton(
-                  style: FilledButton.styleFrom(
-                    backgroundColor: AppColors.button,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: FilledButton(
+                    style: FilledButton.styleFrom(
+                      backgroundColor: AppColors.button,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => DesicionScreen()),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Text("Login"),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DesicionScreen(),
+                        ),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text("Login"),
+                    ),
                   ),
                 ),
               ),
-              Spacer(),
+
               Row(
                 spacing: 16,
                 children: [
@@ -142,104 +155,119 @@ class _LogInScreenState extends State<LogInScreen> {
                 ],
               ),
 
-              SizedBox(
-                width: double.infinity,
-                child: FilledButton(
-                  style: FilledButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: FilledButton(
+                    style: FilledButton.styleFrom(
+                      backgroundColor: Colors.black,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
                     ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => DesicionScreen()),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(Icons.apple, color: Colors.white),
-                        const SizedBox(width: 8.0),
-                        const Text(
-                          "Login mit Apple",
-                          style: TextStyle(color: Colors.white),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DesicionScreen(),
                         ),
-                      ],
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(Icons.apple, color: Colors.white),
+                          const SizedBox(width: 8.0),
+                          const Text(
+                            "Login mit Apple",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
               ),
-              Spacer(),
-              SizedBox(
-                width: double.infinity,
-                child: FilledButton(
-                  style: FilledButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => DesicionScreen()),
-                    );
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(Icons.facebook, color: Colors.white),
-                        const SizedBox(width: 8.0),
-                        const Text(
-                          "Login mit Facebook",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Spacer(),
-              SizedBox(
-                width: double.infinity,
-                child: FilledButton(
-                  style: FilledButton.styleFrom(
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => DesicionScreen()),
-                    );
-                  },
 
-                  child: Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(
-                          Icons.g_mobiledata_rounded,
-                          color: Colors.black,
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: FilledButton(
+                    style: FilledButton.styleFrom(
+                      backgroundColor: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DesicionScreen(),
                         ),
-                        const SizedBox(width: 8.0),
-                        const Text(
-                          "Login mit Google",
-                          style: TextStyle(color: Colors.black),
+                      );
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(Icons.facebook, color: Colors.white),
+                          const SizedBox(width: 8.0),
+                          const Text(
+                            "Login mit Facebook",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SizedBox(
+                  width: double.infinity,
+                  child: FilledButton(
+                    style: FilledButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DesicionScreen(),
                         ),
-                      ],
+                      );
+                    },
+
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Icon(
+                            Icons.g_mobiledata_rounded,
+                            color: Colors.black,
+                          ),
+                          const SizedBox(width: 8.0),
+                          const Text(
+                            "Login mit Google",
+                            style: TextStyle(color: Colors.black),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -252,7 +280,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   Text(
                     "Du hast noch keinen Account?",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 12,
                       fontWeight: FontWeight.normal,
                       color: AppColors.scales,
                     ),
@@ -262,7 +290,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     child: Text(
                       "Registrieren",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 12,
                         fontWeight: FontWeight.normal,
                         color: AppColors.text,
                       ),
