@@ -1,6 +1,7 @@
 import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/desicions_box.dart';
 import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/one_back_button.dart';
 import 'package:easy_guitalele_app/src/features/screen/song_detail_selection_screen.dart';
+import 'package:easy_guitalele_app/src/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class SongListScreen extends StatefulWidget {
@@ -28,10 +29,13 @@ class _SongListScreenState extends State<SongListScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF505160),
+      backgroundColor: AppColors.background,
       appBar: AppBar(
-        toolbarHeight: 250,
-        backgroundColor: const Color(0xFF505160),
+        leading: const OneBackButton(
+          padding: EdgeInsets.fromLTRB(16, 32, 0, 128),
+        ),
+        toolbarHeight: 200,
+        backgroundColor: AppColors.background,
         title: Image.asset('assets/logo/logo.png', height: 200, width: 200),
       ),
 

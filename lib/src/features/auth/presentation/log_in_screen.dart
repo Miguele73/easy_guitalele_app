@@ -2,6 +2,7 @@ import 'package:easy_guitalele_app/src/features/auth/presentation/sign_in_screen
 import 'package:easy_guitalele_app/src/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_guitalele_app/src/features/screen/desicion_screen.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -116,6 +117,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     textStyle: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.normal,
+                      fontFamily: GoogleFonts.rye().fontFamily,
                     ),
                   ),
                   child: Text("Passwort vergessen?"),

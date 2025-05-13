@@ -15,12 +15,13 @@ class _ChordSelectionScreenState extends State<ChordSelectionScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF505160),
       appBar: AppBar(
-        toolbarHeight: 250,
+        leading: OneBackButton(),
+        toolbarHeight: 200,
         backgroundColor: const Color(0xFF505160),
         title: Image.asset('assets/logo/logo.png', height: 200, width: 200),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: const OneBackButton(),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.startTop,
+      // floatingActionButton: const OneBackButton(),
       body: SafeArea(
         child: Column(
           children: [

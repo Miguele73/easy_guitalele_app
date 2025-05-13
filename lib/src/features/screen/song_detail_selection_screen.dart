@@ -1,3 +1,4 @@
+import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/one_back_button.dart';
 import 'package:easy_guitalele_app/src/features/screen/chords_screen.dart';
 import 'package:easy_guitalele_app/src/features/screen/notes_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,10 +12,13 @@ class SongDetailSelectionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: OneBackButton(padding: EdgeInsets.all(8.0)),
+
         title: Text(songName),
         backgroundColor: const Color(0xFF505160),
       ),
 
+      // bottomNavigationBar: MyBottomNavigationBar(),
       backgroundColor: const Color(0xFF505160),
       body: Column(
         children: [
@@ -71,7 +75,7 @@ class SongDetailSelectionScreen extends StatelessWidget {
                   },
                   child: const Text('Noten anzeigen'),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 40),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color(0xFFD5C9B1),

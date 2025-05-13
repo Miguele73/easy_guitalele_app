@@ -12,4 +12,5 @@ abstract class AppColors {
   static final Color background = Color(0xFF505160);
   static final Color white = Color(0xFFFFFFFF);
   static final Color black = Color(0xFF000000);
+  static final Color backgroundOp = Color.fromARGB(255, 62, 62, 67);
 }
