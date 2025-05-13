@@ -1,7 +1,5 @@
 import 'package:easy_guitalele_app/src/features/screen/chords_screen.dart';
-import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/home_button.dart';
 import 'package:easy_guitalele_app/src/features/screen/notes_screen.dart';
-import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/one_back_button.dart';
 import 'package:flutter/material.dart';
 
 class SongDetailSelectionScreen extends StatelessWidget {
@@ -15,14 +13,6 @@ class SongDetailSelectionScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(songName),
         backgroundColor: const Color(0xFF505160),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: Row(
-        children: [
-          const OneBackButton(),
-          const SizedBox(width: 96),
-          const HomeButton(),
-        ],
       ),
 
       backgroundColor: const Color(0xFF505160),

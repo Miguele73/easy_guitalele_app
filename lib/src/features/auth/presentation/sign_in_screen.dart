@@ -1,16 +1,15 @@
-import 'package:easy_guitalele_app/src/features/auth/presentation/sign_in_screen.dart';
 import 'package:easy_guitalele_app/src/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_guitalele_app/src/features/screen/desicion_screen.dart';
 
-class LogInScreen extends StatefulWidget {
-  const LogInScreen({super.key});
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
 
   @override
-  State<LogInScreen> createState() => _LogInScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _LogInScreenState extends State<LogInScreen> {
+class _SignInScreenState extends State<SignInScreen> {
   bool _isObscured = true;
 
   @override
@@ -18,7 +17,13 @@ class _LogInScreenState extends State<LogInScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFF505160),
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_circle_left_outlined),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+        automaticallyImplyLeading: true,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(10),
@@ -57,9 +62,9 @@ class _LogInScreenState extends State<LogInScreen> {
             spacing: 8,
             children: [
               Text(
-                "Hi, schön, dass du da bist!",
+                "Bitte registriere dich",
                 style: TextStyle(
-                  fontSize: 24,
+                  fontSize: 16,
                   fontWeight: FontWeight.bold,
                   color: AppColors.text,
                 ),
@@ -70,6 +75,21 @@ class _LogInScreenState extends State<LogInScreen> {
                   decoration: InputDecoration(
                     labelText: "Email",
                     hintText: "Email eingeben",
+                    border: OutlineInputBorder(),
+                    labelStyle: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                      color: AppColors.text,
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                    labelText: "Email wiederholen",
+                    hintText: "Email erneut eingeben",
                     border: OutlineInputBorder(),
                     labelStyle: TextStyle(
                       fontSize: 12,
@@ -107,20 +127,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   obscureText: _isObscured,
                 ),
               ),
-              Align(
-                alignment: Alignment.centerRight,
-                child: TextButton(
-                  onPressed: () {},
-                  style: TextButton.styleFrom(
-                    foregroundColor: AppColors.text,
-                    textStyle: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.normal,
-                    ),
-                  ),
-                  child: Text("Passwort vergessen?"),
-                ),
-              ),
+
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: SizedBox(
@@ -142,7 +149,7 @@ class _LogInScreenState extends State<LogInScreen> {
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(16.0),
-                      child: Text("Login"),
+                      child: Text("Registrieren"),
                     ),
                   ),
                 ),
@@ -185,7 +192,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           const Icon(Icons.apple, color: Colors.white),
                           const SizedBox(width: 8.0),
                           const Text(
-                            "Login mit Apple",
+                            "SignIn mit Apple",
                             style: TextStyle(color: Colors.white),
                           ),
                         ],
@@ -223,7 +230,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           const Icon(Icons.facebook, color: Colors.white),
                           const SizedBox(width: 8.0),
                           const Text(
-                            "Login mit Facebook",
+                            "SignIn mit Facebook",
                             style: TextStyle(color: Colors.white),
                           ),
                         ],
@@ -265,7 +272,7 @@ class _LogInScreenState extends State<LogInScreen> {
                           ),
                           const SizedBox(width: 8.0),
                           const Text(
-                            "Login mit Google",
+                            "SignIn mit Google",
                             style: TextStyle(color: Colors.black),
                           ),
                         ],
@@ -275,35 +282,16 @@ class _LogInScreenState extends State<LogInScreen> {
                 ),
               ),
               Spacer(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                spacing: 8,
-                children: [
-                  Text(
-                    "Du hast noch keinen Account?",
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.normal,
-                      color: AppColors.scales,
-                    ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  "Durch die Registrierung akzeptierst du unsere Nutzungsbedingungen und Datenschutzbestimmungen.",
+                  style: TextStyle(
+                    fontSize: 8,
+                    fontWeight: FontWeight.normal,
+                    color: AppColors.text,
                   ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => SignInScreen()),
-                      );
-                    },
-                    child: Text(
-                      "Registrieren",
-                      style: TextStyle(
-                        fontSize: 12,
-                        fontWeight: FontWeight.normal,
-                        color: AppColors.text,
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ],
           ),

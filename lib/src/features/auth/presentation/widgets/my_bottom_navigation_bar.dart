@@ -20,7 +20,7 @@ class MyBottomNavigationBar extends StatelessWidget {
                     Navigator.of(context).pop();
                   },
                   icon: Icon(
-                    Icons.arrow_back_outlined,
+                    Icons.arrow_circle_left_outlined,
                     color: Color(0xFFF4CC70),
                   ),
                 ),
@@ -36,7 +36,7 @@ class MyBottomNavigationBar extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, '/');
                   },
-                  icon: Icon(Icons.house_siding, color: Color(0xFFF4CC70)),
+                  icon: Icon(Icons.home_outlined, color: Color(0xFFF4CC70)),
                 ),
               ),
             ),

@@ -12,16 +12,17 @@ class SongListScreen extends StatefulWidget {
 
 class _SongListScreenState extends State<SongListScreen> {
   get songs => [
-    'Song 1',
-    'Song 2',
-    'Song 3',
-    'Song 4',
-    'Song 5',
-    'Song 6',
-    'Song 7',
-    'Song 8',
-    'Song 9',
-    'Song 10',
+    'Angie, Rolling Stones',
+    'Blackbird, Beatles',
+    'Boulevard of Broken Dreams, Green Day',
+    'Creep, Radiohead',
+    'Dust in the Wind, Kansas',
+    'Hallelujah, Leonard Cohen',
+    'Hotel California, Eagles',
+    'I Will Always Love You, Whitney Houston',
+    'Knockin\' on Heaven\'s Door, Bob Dylan',
+    'Let It Be, Beatles',
+    'Landslide, Fleetwood Mac',
   ];
 
   @override
@@ -34,8 +35,6 @@ class _SongListScreenState extends State<SongListScreen> {
         title: Image.asset('assets/logo/logo.png', height: 200, width: 200),
       ),
 
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: const OneBackButton(),
       body: SafeArea(
         child: Column(
           children: [
