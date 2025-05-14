@@ -23,21 +23,5 @@ class OneBackButton extends StatelessWidget {
         child: Image.asset('assets/icons/BackIcon.png', color: AppColors.white),
       ),
     );
-    // return IconButton(
-    //   onPressed:
-    //       onPressed ??
-    //       () {
-    //         Navigator.of(context).maybePop();
-    //       },
-    //   icon: Padding(
-    //     padding: const EdgeInsets.all(8.0),
-
-    //     child: FloatingActionButton(
-    //       onPressed: () {
-    //         Navigator.of(context).maybePop();
-    //       },
-    //     ),
-    //   ),
-    // );
   }
 }

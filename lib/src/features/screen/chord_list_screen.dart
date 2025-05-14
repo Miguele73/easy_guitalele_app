@@ -1,5 +1,8 @@
-import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/desicions_box.dart';
-import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/one_back_button.dart';
+// ignore_for_file: library_prefixes
+
+import 'package:easy_guitalele_app/src/features/auth/chord/chord.dart'
+    as ChordList;
+import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/my_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class ChordListScreen extends StatefulWidget {
@@ -10,55 +13,80 @@ class ChordListScreen extends StatefulWidget {
 }
 
 class _ChordListScreenState extends State<ChordListScreen> {
-  get chords => [
-    'C Major',
-    'G Major',
-    'D Major',
-    'A Major',
-    'E Major',
-    'B Major',
-    'F# Major',
-    'Db Major',
-    'Ab Major',
-    'Eb Major',
-  ];
+  void _showChordDiagram(String chordName) {
+    setState(() {});
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return GestureDetector(
+          onTap: _closeChordDiagram,
+          child: AlertDialog(
+            contentPadding: EdgeInsets.zero,
+            content: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  if (ChordList.chordImageMap.containsKey(chordName))
+                    Image.asset(ChordList.chordImageMap[chordName]!),
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      chordName,
+                      style: const TextStyle(
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+  void _closeChordDiagram() {
+    setState(() {});
+    Navigator.of(context).pop();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF505160),
-      appBar: AppBar(
-        toolbarHeight: 250,
-        backgroundColor: const Color(0xFF505160),
-        title: Image.asset('assets/logo/logo.png', height: 200, width: 200),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      floatingActionButton: const OneBackButton(),
+      appBar: MyAppBar(automaticallyImplyLeading: true),
       body: SafeArea(
         child: Column(
           children: [
-            DesicionsBox(
-              color: Color(0xFFDE7A22),
-              selectionText: 'Chordliste',
-              imageIcon: ImageIcon(AssetImage('assets/icons/ChordIcon.png')),
-            ),
             const SizedBox(height: 20),
             Expanded(
-              child: ListView.builder(
-                shrinkWrap: false,
-                itemCount: chords.length,
+              child: GridView.builder(
+                padding: const EdgeInsets.all(16.0),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 4,
+                  crossAxisSpacing: 8.0,
+                  mainAxisSpacing: 8.0,
+                  childAspectRatio: 1.0,
+                ),
+                itemCount: ChordList.allChordNames.length,
                 itemBuilder: (context, index) {
-                  final String chord = chords[index];
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Card(
-                      color: const Color(0xFFBCBABE),
-                      child: ListTile(
-                        title: Text(chord),
-                        leading: const Icon(Icons.music_note),
-                        onTap: () {
-                          // Handle chord selection
-                        },
+                  final chordName = ChordList.allChordNames[index];
+                  return GestureDetector(
+                    onTap: () => _showChordDiagram(chordName),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFBCBABE),
+                        borderRadius: BorderRadius.circular(8.0),
+                      ),
+                      child: Center(
+                        child: Text(
+                          chordName,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(fontWeight: FontWeight.bold),
+                          overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ),
                   );

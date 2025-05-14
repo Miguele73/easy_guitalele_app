@@ -1,5 +1,5 @@
 import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/desicions_box.dart';
-import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/one_back_button.dart';
+import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/my_app_bar.dart';
 import 'package:easy_guitalele_app/src/features/screen/song_detail_selection_screen.dart';
 import 'package:easy_guitalele_app/src/theme/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -30,56 +30,53 @@ class _SongListScreenState extends State<SongListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.background,
-      appBar: AppBar(
-        leading: const OneBackButton(
-          padding: EdgeInsets.fromLTRB(16, 32, 0, 128),
-        ),
-        toolbarHeight: 200,
-        backgroundColor: AppColors.background,
-        title: Image.asset('assets/logo/logo.png', height: 200, width: 200),
-      ),
+      appBar: MyAppBar(automaticallyImplyLeading: true),
 
       body: SafeArea(
-        child: Column(
-          children: [
-            DesicionsBox(
-              color: Color(0xFFDE7A22),
-              selectionText: 'Songs',
-              imageIcon: ImageIcon(
-                AssetImage('assets/icons/music-4SongsIcon.png'),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              DesicionsBox(
+                color: Color(0xFFDE7A22),
+                selectionText: 'Songs',
+                imageIcon: ImageIcon(
+                  AssetImage('assets/icons/music-4SongsIcon.png'),
+                ),
               ),
-            ),
-            const SizedBox(height: 20),
-            Expanded(
-              child: ListView.builder(
-                shrinkWrap: false,
-                itemCount: songs.length,
-                itemBuilder: (context, index) {
-                  final String song = songs[index];
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    child: Card(
-                      color: const Color(0xFFBCBABE),
-                      child: ListTile(
-                        title: Text(song),
-                        leading: const Icon(Icons.music_note),
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder:
-                                  (context) =>
-                                      SongDetailSelectionScreen(songName: song),
-                            ),
-                          );
-                        },
+              const SizedBox(height: 20),
+              Expanded(
+                child: ListView.builder(
+                  shrinkWrap: false,
+                  itemCount: songs.length,
+                  itemBuilder: (context, index) {
+                    final String song = songs[index];
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      child: Card(
+                        color: const Color(0xFFBCBABE),
+                        child: ListTile(
+                          title: Text(song),
+                          leading: const Icon(Icons.music_note),
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder:
+                                    (context) => SongDetailSelectionScreen(
+                                      songName: song,
+                                    ),
+                              ),
+                            );
+                          },
+                        ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

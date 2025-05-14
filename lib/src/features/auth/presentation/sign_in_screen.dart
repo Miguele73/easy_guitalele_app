@@ -1,3 +1,4 @@
+import 'package:easy_guitalele_app/src/features/auth/presentation/login_app_bar.dart';
 import 'package:easy_guitalele_app/src/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_guitalele_app/src/features/screen/desicion_screen.dart';
@@ -16,43 +17,9 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF505160),
-      appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(Icons.arrow_circle_left_outlined),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
+      appBar: LoginAppBar(
         automaticallyImplyLeading: true,
-        shape: const RoundedRectangleBorder(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(10),
-            bottomRight: Radius.circular(10),
-          ),
-        ),
-        centerTitle: true,
-        toolbarHeight: 96,
-        backgroundColor: AppColors.appBar,
-
-        title: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Image.asset('assets/logo/logo_klein.png', width: 50, height: 50),
-            const SizedBox(height: 8),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(4.0, 2, 4, 16),
-              child: Text(
-                "Easy Guitalele",
-                style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black,
-                ),
-              ),
-            ),
-          ],
-        ),
+        preferredSize: Size(MediaQuery.of(context).size.width, 96),
       ),
 
       body: SafeArea(
