@@ -1,6 +1,5 @@
 import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/desicions_box.dart';
 import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/my_app_bar.dart';
-import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/one_back_button.dart';
 import 'package:flutter/material.dart';
 
 class ScaleSelectionScreen extends StatefulWidget {
