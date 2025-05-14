@@ -22,9 +22,9 @@ class _SplashScreenState extends State<SplashScreen>
     super.initState();
 
     _slideController =
-        AnimationController(vsync: this, duration: Duration(seconds: 6))
+        AnimationController(vsync: this, duration: Duration(seconds: 5))
           ..forward().whenComplete(() {
-            Future.delayed(Duration(milliseconds: 500), () {
+            Future.delayed(Duration(milliseconds: 300), () {
               _slideController.reverse();
             });
           })
@@ -39,14 +39,14 @@ class _SplashScreenState extends State<SplashScreen>
 
     _slideAnimation = Tween<Offset>(
       begin: Offset(-1.0, -1.0),
-      end: Offset.fromDirection(0.7),
+      end: Offset.fromDirection(1.0),
     ).animate(
       CurvedAnimation(parent: _slideController, curve: Curves.easeInOut),
     );
 
     _colorController = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 6),
+      duration: Duration(seconds: 5),
     )..repeat(reverse: true);
 
     _colorAnimation = ColorTween(
@@ -89,6 +89,8 @@ class _SplashScreenState extends State<SplashScreen>
                 end: Alignment.bottomCenter,
                 colors: [
                   _colorAnimation.value ?? Color(0xFF68829E),
+                  Color(0xFF1995AD),
+                  Color(0xFF6AB187),
 
                   _colorAnimation.value ?? Color(0xFFAEBD38),
                   Color(0xFFBFDCCF),

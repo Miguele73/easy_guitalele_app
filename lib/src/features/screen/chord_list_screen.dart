@@ -66,7 +66,7 @@ class _ChordListScreenState extends State<ChordListScreen> {
               child: DesicionsBox(
                 color: Color(0xFFBFDCCF),
                 selectionText: 'Chordliste',
-                imageIcon: ImageIcon(AssetImage('assets/icons/ChordIcon.png')),
+                imageIcon: ImageIcon(AssetImage('assets/icons/ChordsIcon.png')),
               ),
             ),
 
