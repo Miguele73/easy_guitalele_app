@@ -2,6 +2,7 @@
 
 import 'package:easy_guitalele_app/src/features/auth/chord/chord.dart'
     as ChordList;
+import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/desicions_box.dart';
 import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/my_app_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -60,7 +61,15 @@ class _ChordListScreenState extends State<ChordListScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            const SizedBox(height: 20),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: DesicionsBox(
+                color: Color(0xFFBFDCCF),
+                selectionText: 'Chordliste',
+                imageIcon: ImageIcon(AssetImage('assets/icons/ChordIcon.png')),
+              ),
+            ),
+
             Expanded(
               child: GridView.builder(
                 padding: const EdgeInsets.all(16.0),
