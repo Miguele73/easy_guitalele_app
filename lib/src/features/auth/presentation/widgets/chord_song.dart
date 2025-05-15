@@ -4,13 +4,13 @@ class ChordSong extends Song {
   final List<Section> sections;
 
   ChordSong({
-    required super.id,
     required super.title,
     required super.coverUrl,
-    required super.description,
+
     required super.difficulty,
     super.artist,
     required this.sections,
+    required super.lengthOfSong,
   });
 }
 

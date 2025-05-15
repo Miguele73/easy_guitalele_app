@@ -1,5 +1,7 @@
+import 'package:easy_guitalele_app/src/features/auth/artist/artists.dart';
 import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/desicions_box.dart';
 import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/my_app_bar.dart';
+import 'package:easy_guitalele_app/src/features/auth/song/song.dart';
 import 'package:easy_guitalele_app/src/features/screen/song_detail_selection_screen.dart';
 import 'package:easy_guitalele_app/src/theme/app_colors.dart';
 import 'package:flutter/material.dart';
@@ -12,19 +14,13 @@ class SongListScreen extends StatefulWidget {
 }
 
 class _SongListScreenState extends State<SongListScreen> {
-  get songs => [
-    'Angie, Rolling Stones',
-    'Blackbird, Beatles',
-    'Boulevard of Broken Dreams, Green Day',
-    'Creep, Radiohead',
-    'Dust in the Wind, Kansas',
-    'Hallelujah, Leonard Cohen',
-    'Hotel California, Eagles',
-    'I Will Always Love You, Whitney Houston',
-    'Knockin\' on Heaven\'s Door, Bob Dylan',
-    'Let It Be, Beatles',
-    'Landslide, Fleetwood Mac',
-  ];
+  get song => Song(
+    title: '',
+    coverUrl: '',
+    difficulty: SongDifficulty.medium,
+    artist: Artist(name: ''),
+    lengthOfSong: 0,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +44,9 @@ class _SongListScreenState extends State<SongListScreen> {
               Expanded(
                 child: ListView.builder(
                   shrinkWrap: false,
-                  itemCount: songs.length,
+                  itemCount: song.length,
                   itemBuilder: (context, index) {
-                    final String song = songs[index];
+                    final String song = 'song $index';
                     return Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16.0),
                       child: Card(

@@ -1,15 +1,15 @@
 import '../../song/song.dart';
 
 class TabsSong extends Song {
-  final String tabImgUrl; // URL to the tab image file
+  final String tabImgUrl;
 
   TabsSong({
-    required super.id,
     required super.title,
     required super.coverUrl,
-    required super.description,
+
     required super.difficulty,
     super.artist,
     required this.tabImgUrl,
+    required super.lengthOfSong,
   });
 }
