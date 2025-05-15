@@ -60,25 +60,72 @@ class MockDatabaseRepository implements DatabaseRepository {
       lengthOfSong: 242,
     ),
     Song(
-      title: 'Song 2',
-      coverUrl: 'assets/songs/song2.jpg',
+      title: 'Blackbird',
+      coverUrl: 'assets/covers/blackbird.png',
 
       difficulty: SongDifficulty.medium,
-      artist: null,
+      artist: Artist(name: 'The Beatles'),
       lengthOfSong: null,
     ),
     Song(
-      title: 'Song 3',
-      coverUrl: 'assets/songs/song3.jpg',
+      title: 'Boulevard of broken dreams',
+      coverUrl: 'assets/covers/boulevard.png',
+
+      difficulty: SongDifficulty.hard,
+      artist: Artist(name: 'Green Day'),
+      lengthOfSong: null,
+    ),
+    Song(
+      title: 'Creep',
+      coverUrl: 'assets/covers/creep.png',
+
+      difficulty: SongDifficulty.hard,
+      artist: Artist(name: 'Radiohead'),
+      lengthOfSong: null,
+    ),
+    Song(
+      title: 'Dust in the wind',
+      coverUrl: 'assets/covers/dust_in_the_wind.png',
+
+      difficulty: SongDifficulty.hard,
+      artist: Artist(name: 'Kansas'),
+      lengthOfSong: null,
+    ),
+    Song(
+      title: 'Hallelujah',
+      coverUrl: 'assets/covers/hallelujah.png',
 
       difficulty: SongDifficulty.hard,
       artist: null,
       lengthOfSong: null,
     ),
+    Song(
+      title: 'Hotel California',
+      coverUrl: 'assets/covers/hotel_california.png',
+
+      difficulty: SongDifficulty.hard,
+      artist: Artist(name: 'Eagles'),
+      lengthOfSong: null,
+    ),
+    Song(
+      title: 'I will always love you',
+      coverUrl: 'assets/covers/i_will_always.png',
+
+      difficulty: SongDifficulty.hard,
+      artist: Artist(name: 'Whitney Houston'),
+      lengthOfSong: null,
+    ),
+    Song(
+      title: 'Knockin on heavens door',
+      coverUrl: 'assets/covers/knockin_on_heavens.png',
+
+      difficulty: SongDifficulty.hard,
+      artist: Artist(name: 'Bob Dylan'),
+      lengthOfSong: null,
+    ),
   ];
 
   @override
-  // ignore: override_on_non_overriding_member
   List<Song> getSongs() {
     return songs;
   }
@@ -99,7 +146,6 @@ class MockDatabaseRepository implements DatabaseRepository {
   }
 
   @override
-  // ignore: override_on_non_overriding_member
   List<Chord> getAllChords() {
     return allChords;
   }

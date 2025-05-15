@@ -19,11 +19,13 @@ class EasyGuitaleleApp extends StatelessWidget {
       themeMode: ThemeMode.system,
       initialRoute: '/splashScreen',
       routes: {
-        '/songListScreen': (context) => const SongListScreen(),
+        '/songListScreen': (context) => SongListScreen(myRepository),
         '/splashScreen': (context) => SplashScreen(myRepository),
-        '/chordSelectionScreen': (context) => ChordSelectionScreen(),
-        '/scaleSelectionScreen': (context) => ScaleSelectionScreen(),
-        '/chordListScreen': (context) => ChordListScreen(),
+        '/chordSelectionScreen':
+            (context) => ChordSelectionScreen(myRepository),
+        '/scaleSelectionScreen':
+            (context) => ScaleSelectionScreen(myRepository),
+        '/chordListScreen': (context) => ChordListScreen(myRepository),
       },
       debugShowCheckedModeBanner: false,
       home: SplashScreen(myRepository),

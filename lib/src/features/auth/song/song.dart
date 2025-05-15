@@ -10,6 +10,9 @@ class Song {
   final Artist? artist;
   final int? lengthOfSong;
 
+  // ignore: prefer_typing_uninitialized_variables
+  static var length;
+
   Song({
     required this.title,
     required this.coverUrl,

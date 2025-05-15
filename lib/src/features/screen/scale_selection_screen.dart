@@ -1,10 +1,11 @@
+import 'package:easy_guitalele_app/src/data/database_repository.dart';
 import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/desicions_box.dart';
 import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/my_app_bar.dart';
 import 'package:flutter/material.dart';
 
 class ScaleSelectionScreen extends StatefulWidget {
-  const ScaleSelectionScreen({super.key});
-
+  final DatabaseRepository myRepository;
+  const ScaleSelectionScreen(this.myRepository, {super.key});
   @override
   State<ScaleSelectionScreen> createState() => _ScaleSelectionScreenState();
 }

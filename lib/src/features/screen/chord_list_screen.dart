@@ -1,5 +1,6 @@
 // ignore_for_file: library_prefixes
 
+import 'package:easy_guitalele_app/src/data/database_repository.dart';
 import 'package:easy_guitalele_app/src/features/auth/chord/chord.dart'
     as ChordList;
 import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/desicions_box.dart';
@@ -7,7 +8,8 @@ import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/my_app
 import 'package:flutter/material.dart';
 
 class ChordListScreen extends StatefulWidget {
-  const ChordListScreen({super.key});
+  final DatabaseRepository myRepository;
+  const ChordListScreen(this.myRepository, {super.key});
 
   @override
   State<ChordListScreen> createState() => _ChordListScreenState();
