@@ -1,10 +1,12 @@
+import 'package:easy_guitalele_app/src/data/database_repository.dart';
 import 'package:easy_guitalele_app/src/features/auth/presentation/login_app_bar.dart';
 import 'package:easy_guitalele_app/src/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_guitalele_app/src/features/screen/desicion_screen.dart';
 
 class SignInScreen extends StatefulWidget {
-  const SignInScreen({super.key});
+  final DatabaseRepository myRepository;
+  const SignInScreen(this.myRepository, {super.key});
 
   @override
   State<SignInScreen> createState() => _SignInScreenState();
@@ -110,7 +112,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DesicionScreen(),
+                          builder:
+                              (context) => DesicionScreen(widget.myRepository),
                         ),
                       );
                     },
@@ -146,7 +149,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DesicionScreen(),
+                          builder:
+                              (context) => DesicionScreen(widget.myRepository),
                         ),
                       );
                     },
@@ -184,7 +188,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DesicionScreen(),
+                          builder:
+                              (context) => DesicionScreen(widget.myRepository),
                         ),
                       );
                     },
@@ -222,7 +227,8 @@ class _SignInScreenState extends State<SignInScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DesicionScreen(),
+                          builder:
+                              (context) => DesicionScreen(widget.myRepository),
                         ),
                       );
                     },

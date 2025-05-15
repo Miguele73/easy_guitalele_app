@@ -1,10 +1,12 @@
 // ignore_for_file: library_private_types_in_public_api
 
+import 'package:easy_guitalele_app/src/data/database_repository.dart';
 import 'package:easy_guitalele_app/src/features/auth/presentation/log_in_screen.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+  final DatabaseRepository myRepository;
+  const SplashScreen(this.myRepository, {super.key});
 
   @override
   _SplashScreenState createState() => _SplashScreenState();
@@ -32,7 +34,9 @@ class _SplashScreenState extends State<SplashScreen>
             if (status == AnimationStatus.dismissed) {
               Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => LogInScreen()),
+                MaterialPageRoute(
+                  builder: (context) => LogInScreen(widget.myRepository),
+                ),
               );
             }
           });

@@ -1,3 +1,4 @@
+import 'package:easy_guitalele_app/src/data/database_repository.dart';
 import 'package:easy_guitalele_app/src/features/auth/presentation/login_app_bar.dart';
 import 'package:easy_guitalele_app/src/features/auth/presentation/sign_in_screen.dart';
 import 'package:easy_guitalele_app/src/theme/app_colors.dart';
@@ -6,7 +7,8 @@ import 'package:easy_guitalele_app/src/features/screen/desicion_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class LogInScreen extends StatefulWidget {
-  const LogInScreen({super.key});
+  final DatabaseRepository myRepository;
+  const LogInScreen(this.myRepository, {super.key});
 
   @override
   State<LogInScreen> createState() => _LogInScreenState();
@@ -38,17 +40,19 @@ class _LogInScreenState extends State<LogInScreen> {
                   color: AppColors.text,
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    labelText: "Email",
-                    hintText: "Email eingeben",
-                    border: OutlineInputBorder(),
-                    labelStyle: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.normal,
-                      color: AppColors.text,
+              SizedBox(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      labelText: "Email",
+                      hintText: "Email eingeben",
+                      border: OutlineInputBorder(),
+                      labelStyle: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.normal,
+                        color: AppColors.text,
+                      ),
                     ),
                   ),
                 ),
@@ -111,7 +115,8 @@ class _LogInScreenState extends State<LogInScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DesicionScreen(),
+                          builder:
+                              (context) => DesicionScreen(widget.myRepository),
                         ),
                       );
                     },
@@ -147,7 +152,8 @@ class _LogInScreenState extends State<LogInScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DesicionScreen(),
+                          builder:
+                              (context) => DesicionScreen(widget.myRepository),
                         ),
                       );
                     },
@@ -185,7 +191,8 @@ class _LogInScreenState extends State<LogInScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DesicionScreen(),
+                          builder:
+                              (context) => DesicionScreen(widget.myRepository),
                         ),
                       );
                     },
@@ -223,7 +230,8 @@ class _LogInScreenState extends State<LogInScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DesicionScreen(),
+                          builder:
+                              (context) => DesicionScreen(widget.myRepository),
                         ),
                       );
                     },
@@ -266,7 +274,10 @@ class _LogInScreenState extends State<LogInScreen> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => SignInScreen()),
+                        MaterialPageRoute(
+                          builder:
+                              (context) => SignInScreen(widget.myRepository),
+                        ),
                       );
                     },
                     child: Text(

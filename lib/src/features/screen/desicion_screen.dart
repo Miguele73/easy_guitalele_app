@@ -1,8 +1,10 @@
+import 'package:easy_guitalele_app/src/data/database_repository.dart';
 import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/desicions_box.dart';
 import 'package:flutter/material.dart';
 
 class DesicionScreen extends StatefulWidget {
-  const DesicionScreen({super.key});
+  final DatabaseRepository myRepository;
+  const DesicionScreen(this.myRepository, {super.key});
 
   @override
   State<DesicionScreen> createState() => _DesicionScreenState();
@@ -20,9 +22,6 @@ class _DesicionScreenState extends State<DesicionScreen> {
         title: Image.asset('assets/logo/logo.png', height: 200, width: 200),
       ),
 
-      // bottomNavigationBar: MyBottomNavigationBar(),
-      // floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
-      // floatingActionButton: const OneBackButton(),
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
