@@ -37,7 +37,7 @@ class _SongListScreenState extends State<SongListScreen> {
               Expanded(
                 child: ListView.builder(
                   shrinkWrap: false,
-                  itemCount: Song.length,
+                  itemCount: widget.myRepository.getSongs().length,
                   itemBuilder: (context, index) {
                     final Song currentSong =
                         widget.myRepository.getSongs()[index];
@@ -52,11 +52,8 @@ class _SongListScreenState extends State<SongListScreen> {
                             currentSong.difficulty.toString().split('.').last,
                             style: const TextStyle(fontWeight: FontWeight.bold),
                           ),
-                          leading: Image.asset(
-                            currentSong.coverUrl,
-                            // fit: BoxFit.cover,
-                          ),
-                          // leading: const Icon(Icons.music_note),
+                          leading: Image.asset(currentSong.coverUrl),
+
                           onTap: () {
                             Navigator.push(
                               context,

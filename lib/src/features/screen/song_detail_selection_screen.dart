@@ -2,6 +2,7 @@ import 'package:easy_guitalele_app/src/features/auth/presentation/widgets/one_ba
 import 'package:easy_guitalele_app/src/features/screen/chords_screen.dart';
 import 'package:easy_guitalele_app/src/features/screen/notes_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SongDetailSelectionScreen extends StatelessWidget {
   final String songName;
@@ -62,7 +63,10 @@ class SongDetailSelectionScreen extends StatelessWidget {
                       horizontal: 32,
                       vertical: 16,
                     ),
-                    textStyle: const TextStyle(fontSize: 20),
+                    textStyle: TextStyle(
+                      fontSize: 20,
+                      fontFamily: GoogleFonts.rye().fontFamily,
+                    ),
                   ),
                   onPressed: () {
                     Navigator.push(
@@ -83,7 +87,10 @@ class SongDetailSelectionScreen extends StatelessWidget {
                       horizontal: 32,
                       vertical: 16,
                     ),
-                    textStyle: const TextStyle(fontSize: 20),
+                    textStyle: TextStyle(
+                      fontSize: 20,
+                      fontFamily: GoogleFonts.rye().fontFamily,
+                    ),
                   ),
                   onPressed: () {
                     Navigator.push(

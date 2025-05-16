@@ -97,7 +97,7 @@ class MockDatabaseRepository implements DatabaseRepository {
       coverUrl: 'assets/covers/hallelujah.png',
 
       difficulty: SongDifficulty.hard,
-      artist: null,
+      artist: Artist(name: 'Leonard Cohen'),
       lengthOfSong: null,
     ),
     Song(
