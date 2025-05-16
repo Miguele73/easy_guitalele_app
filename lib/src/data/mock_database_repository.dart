@@ -51,10 +51,6 @@ class MockDatabaseRepository implements DatabaseRepository {
     Chord(chordName: 'Bbsus2', assetImagePath: 'assets/chords/Bbsus2.png'),
   ];
 
-  MockDatabaseRepository() {
-    allChords.sort();
-  }
-
   List<Song> songs = [
     Song(
       title: 'Angie',
