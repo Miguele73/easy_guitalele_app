@@ -50,6 +50,11 @@ class MockDatabaseRepository implements DatabaseRepository {
     Chord(chordName: 'Bbsus4', assetImagePath: 'assets/chords/Bbsus4.png'),
     Chord(chordName: 'Bbsus2', assetImagePath: 'assets/chords/Bbsus2.png'),
   ];
+
+  MockDatabaseRepository() {
+    allChords.sort();
+  }
+
   List<Song> songs = [
     Song(
       title: 'Angie',
@@ -79,7 +84,7 @@ class MockDatabaseRepository implements DatabaseRepository {
       title: 'Creep',
       coverUrl: 'assets/covers/creep.png',
 
-      difficulty: SongDifficulty.hard,
+      difficulty: SongDifficulty.medium,
       artist: Artist(name: 'Radiohead'),
       lengthOfSong: null,
     ),
@@ -103,7 +108,7 @@ class MockDatabaseRepository implements DatabaseRepository {
       title: 'Hotel California',
       coverUrl: 'assets/covers/hotel_california.png',
 
-      difficulty: SongDifficulty.hard,
+      difficulty: SongDifficulty.veryEasy,
       artist: Artist(name: 'Eagles'),
       lengthOfSong: null,
     ),
@@ -117,9 +122,9 @@ class MockDatabaseRepository implements DatabaseRepository {
     ),
     Song(
       title: 'Knockin on heavens door',
-      coverUrl: 'assets/covers/knockin_on_heavens.png',
+      coverUrl: 'assets/covers/knocking_on_heavens.png',
 
-      difficulty: SongDifficulty.hard,
+      difficulty: SongDifficulty.easy,
       artist: Artist(name: 'Bob Dylan'),
       lengthOfSong: null,
     ),
@@ -152,14 +157,12 @@ class MockDatabaseRepository implements DatabaseRepository {
 
   @override
   void addSongToFavorites(Song song) {
-    // check if favorites already contains the song
     for (UsersFav fav in favorites) {
       if (fav.song.title == song.title) {
-        // If it does, leave the method without doing anything
         return;
       }
     }
-    // If it doesn't, add the song to favorites
+
     UsersFav newFav = UsersFav(song: song, isChordSong: song is ChordSong);
     favorites.add(newFav);
   }

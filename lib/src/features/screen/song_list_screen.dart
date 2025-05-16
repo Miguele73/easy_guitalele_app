@@ -54,7 +54,7 @@ class _SongListScreenState extends State<SongListScreen> {
                           ),
                           leading: Image.asset(
                             currentSong.coverUrl,
-                            fit: BoxFit.cover,
+                            // fit: BoxFit.cover,
                           ),
                           // leading: const Icon(Icons.music_note),
                           onTap: () {

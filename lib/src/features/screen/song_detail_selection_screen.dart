@@ -18,7 +18,6 @@ class SongDetailSelectionScreen extends StatelessWidget {
         backgroundColor: const Color(0xFF505160),
       ),
 
-      // bottomNavigationBar: MyBottomNavigationBar(),
       backgroundColor: const Color(0xFF505160),
       body: Column(
         children: [
